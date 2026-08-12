@@ -12,11 +12,13 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 - For data access, keep schema and DB wiring in [db/schema.ts](db/schema.ts) and [db/index.ts](db/index.ts). If you touch persistence, make sure the change stays compatible with [drizzle.config.ts](drizzle.config.ts) and the required `DATABASE_URL` environment variable.
 - Authentication and middleware live in [proxy.ts](proxy.ts); respect the Clerk integration unless the request explicitly asks to change it.
 - Use [README.md](README.md) and [package.json](package.json) as the source of truth for setup and scripts.
+- For cloud agent feature work, ALWAYS create and use a working branch named after the feature before making changes.
 
 ## Verification
 
 - Prefer lightweight, focused changes over broad rewrites.
 - Verify changes with `npm run lint` and, when the change affects runtime behavior, `npm run build`.
+- If unit tests exist for the changed area, run them and ensure they pass before creating a PR.
 - Update unit tests when behavior changes, and require all unit tests to pass before opening a pull request.
 - Avoid editing generated or local artifacts under `.next` unless the task explicitly requires it.
 
@@ -24,6 +26,7 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 
 - Reusable prompt files for this repository should live in [.github/prompts](.github/prompts).
 - Keep prompt instructions concise, actionable, and tied to the patterns above rather than repeating the full README.
+- PR descriptions and comments should clearly summarize what was changed.
 
 ## Documentation
 

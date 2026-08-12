@@ -11,7 +11,9 @@ Use this prompt when implementing a feature in this repository.
 - Add or update unit tests when the feature changes behavior.
 - If database changes are required, update the schema and Drizzle config together.
 - Verify the result with the relevant checks, usually `npm run lint` and, when appropriate, `npm run build`.
+- If unit tests exist for the touched area, run them and ensure they pass before opening a PR.
 - Require all unit tests to pass before opening a pull request.
+- Include a clear summary of what changed in the PR comments/description.
 - Pull requests should include comments that summarize what changed and which checks passed.
 
 ## Scope guide
