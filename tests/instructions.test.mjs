@@ -33,3 +33,12 @@ test("Cloud agent workflow doc covers branch naming and PR validation", () => {
   assert.match(workflowDoc, /all unit tests pass/i);
   assert.match(workflowDoc, /summarize what changed/i);
 });
+
+test("Clerk provider uses the shadcn theme", () => {
+  const packageJson = readWorkspaceFile("package.json");
+  const layout = readWorkspaceFile("app/layout.tsx");
+
+  assert.match(packageJson, /"@clerk\/themes":/);
+  assert.match(layout, /import\s+\{\s*shadcn\s*\}\s+from\s+"@clerk\/themes"/);
+  assert.match(layout, /<ClerkProvider\s+appearance=\{\{\s*theme:\s*shadcn\s*\}\}/);
+});
