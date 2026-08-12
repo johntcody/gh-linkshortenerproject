@@ -4,11 +4,15 @@ Use this prompt when implementing a feature in this repository.
 
 ## Expectations
 
+- For Cloud agent feature work, create or switch to a working branch named after the feature before making edits.
 - Inspect the relevant route, component, and data files before making changes.
 - Prefer incremental edits that fit the existing Next.js App Router structure.
 - Keep UI components aligned with the shadcn-style patterns already used in [components/ui](components/ui).
+- Add or update unit tests when the feature changes behavior.
 - If database changes are required, update the schema and Drizzle config together.
 - Verify the result with the relevant checks, usually `npm run lint` and, when appropriate, `npm run build`.
+- Require all unit tests to pass before opening a pull request.
+- Pull requests should include comments that summarize what changed and which checks passed.
 
 ## Scope guide
 

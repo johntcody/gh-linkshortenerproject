@@ -5,6 +5,7 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 ## Working conventions
 
 - Before generating any code, ALWAYS read the relevant individual instruction files in [docs](docs); this is mandatory for every coding task without exception.
+- For Cloud agent feature work, create or switch to a working branch named after the feature before editing files.
 - Start from the existing app structure: route-level work belongs in [app](app), shared UI lives in [components/ui](components/ui), database helpers live in [db](db), and shared utilities live in [lib](lib).
 - Use TypeScript and the existing path alias `@/*` defined in [tsconfig.json](tsconfig.json). Keep new code typed and avoid unnecessary dependencies.
 - Keep UI changes consistent with the existing shadcn-style patterns in [components/ui/button.tsx](components/ui/button.tsx) and the shared helper in [lib/utils.ts](lib/utils.ts).
@@ -16,6 +17,7 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 
 - Prefer lightweight, focused changes over broad rewrites.
 - Verify changes with `npm run lint` and, when the change affects runtime behavior, `npm run build`.
+- Update unit tests when behavior changes, and require all unit tests to pass before opening a pull request.
 - Avoid editing generated or local artifacts under `.next` unless the task explicitly requires it.
 
 ## Prompt files
@@ -26,4 +28,5 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 ## Documentation
 
 - Auth requirements and conventions are documented in [docs/clerk-authentication.md](docs/clerk-authentication.md).
+- Cloud agent workflow requirements are documented in [docs/cloud-agent-workflow.md](docs/cloud-agent-workflow.md).
 - UI component conventions are documented in [docs/shadcn-ui-components.md](docs/shadcn-ui-components.md).
