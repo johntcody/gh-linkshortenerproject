@@ -30,12 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ClerkProvider appearance={{ theme: shadcn }}>
           <header className="flex justify-end p-4">
             <Show when="signed-out">
-              <SignInButton>
+              <SignInButton mode="modal">
                 <Button variant="ghost" size="sm" className="mr-2">
                   Sign in
                 </Button>
               </SignInButton>
-              <SignUpButton>
+              <SignUpButton mode="modal">
                 <Button size="sm">Sign up</Button>
               </SignUpButton>
             </Show>

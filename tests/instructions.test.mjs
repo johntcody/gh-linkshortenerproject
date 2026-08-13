@@ -42,3 +42,10 @@ test("Clerk provider uses the shadcn theme", () => {
   assert.match(layout, /import\s+\{\s*shadcn\s*\}\s+from\s+"@clerk\/themes"/);
   assert.match(layout, /<ClerkProvider\s+appearance=\{\{\s*theme:\s*shadcn\s*\}\}/);
 });
+
+test("Header auth buttons use Clerk modal mode", () => {
+  const layout = readWorkspaceFile("app/layout.tsx");
+
+  assert.match(layout, /<SignInButton\s+mode="modal">/);
+  assert.match(layout, /<SignUpButton\s+mode="modal">/);
+});
