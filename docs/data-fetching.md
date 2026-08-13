@@ -1,0 +1,23 @@
+# Data Fetching Guidance
+
+- Fetch protected app data in server components, route handlers, or server actions. Avoid client-side direct DB access.
+- Perform all data mutations through server actions only.
+- Invoke server actions from client components.
+- Name every server action module `actions.ts` and co-locate it with the client component that calls it.
+- Use explicit TypeScript input types for all server action inputs.
+- Do not use the `FormData` TypeScript type for server action inputs.
+- Validate all server action inputs with Zod before running business or database logic.
+- In every server action, check for a logged-in user before any database operation.
+- Keep all database reads and writes in helper functions under `data/*`.
+- Server actions must call typed `data/*` helper functions and must not contain direct Drizzle queries.
+- Use the shared database client from `db/index.ts` inside the data layer; do not create ad-hoc database connections.
+- Keep table and column usage aligned with `db/schema.ts` so data access remains type-safe with Drizzle.
+- Scope user-owned queries by Clerk user id (for example, `clerkUserId`) to prevent cross-user data exposure.
+- Prefer explicit selected columns for list views instead of fetching full rows when only a subset is needed.
+- Validate and normalize read inputs before querying, especially short codes and URLs.
+- Keep feature-specific read logic close to route-level code when simple; extract shared helpers to `data/*` when reused.
+- Use Next.js cache behavior intentionally:
+  - Use default caching only for public, non-user-specific data.
+  - For authenticated or rapidly changing data, opt out with dynamic rendering/revalidation controls as needed.
+- Handle empty and error states explicitly in UI routes so data issues do not fail silently.
+- When data behavior changes, update or add tests for data helpers, server actions, and route behavior.

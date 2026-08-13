@@ -33,3 +33,5 @@ This repository is a Next.js 16 App Router project for a link shortener. Follow 
 - Auth requirements and conventions are documented in [docs/clerk-authentication.md](docs/clerk-authentication.md).
 - Cloud agent workflow requirements are documented in [docs/cloud-agent-workflow.md](docs/cloud-agent-workflow.md).
 - UI component conventions are documented in [docs/shadcn-ui-components.md](docs/shadcn-ui-components.md).
+- Data fetching conventions are documented in [docs/data-fetching.md](docs/data-fetching.md).
+- Server action mutation conventions are documented in [docs/server-actions-mutations.md](docs/server-actions-mutations.md).
