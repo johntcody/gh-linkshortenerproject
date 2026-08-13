@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getLinksForUser } from "@/data/links";
+import { CreateLinkDialog } from "./create-link-dialog";
 
 export const dynamic = "force-dynamic";
 
@@ -20,11 +21,14 @@ export default async function DashboardPage() {
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-6 pb-16 pt-10 sm:px-8 lg:px-12">
       <Card>
-        <CardHeader>
-          <CardTitle>Your links</CardTitle>
-          <CardDescription>
-            View and manage all shortened links associated with your account.
-          </CardDescription>
+        <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <CardTitle>Your links</CardTitle>
+            <CardDescription>
+              View and manage all shortened links associated with your account.
+            </CardDescription>
+          </div>
+          <CreateLinkDialog />
         </CardHeader>
       </Card>
 
